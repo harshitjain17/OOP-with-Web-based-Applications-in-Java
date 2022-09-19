@@ -8,7 +8,7 @@ package javapractice;
  *
  * @author Harshit Jain
  */
-public class Week3_BasePlusCommissionEmployee {
+public class BasePlusCommissionEmployee {
     private final String firstName; // 'final' because once the obect is created and these variablesare defined, then we can't change it - no setters
     private final String lastName;
     private final String socialSecurityNumber;
@@ -17,7 +17,7 @@ public class Week3_BasePlusCommissionEmployee {
     private double baseSalary; // base salary per week
     
     // five argument constructor
-    public Week3_BasePlusCommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate, double baseSalary) {
+    public BasePlusCommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate, double baseSalary) {
         // implicit call to Object's default constructor occurs here
         
         // if grossSsles is invalid, throw exception

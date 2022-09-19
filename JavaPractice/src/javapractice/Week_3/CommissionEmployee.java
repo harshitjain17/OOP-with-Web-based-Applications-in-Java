@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package javapractice;
+package javapractice.Week_3;
 
 /**
  *
  * @author Harshit Jain
  */
-public class Week3_ComminsionEmployee extends Object {
+public class CommissionEmployee extends Object {
     private final String firstName; // 'final' because once the obect is created and these variablesare defined, then we can't change it - no setters
     private final String lastName;
     private final String socialSecurityNumber;
@@ -16,7 +16,7 @@ public class Week3_ComminsionEmployee extends Object {
     private double commissionRate;
     
     // five argument constructor
-    public Week3_ComminsionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate) {
+    public CommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate) {
         // implicit call to Object's default constructor occurs here
         
         // if grossSsles is invalid, throw exception
@@ -79,16 +79,16 @@ public class Week3_ComminsionEmployee extends Object {
     
     // calculate earnings
     public double earnings() {
-        return commissionRate * grossSales;
+        return getCommissionRate() * getGrossSales();
     }
     
     // return string implementation of CommissionEmployee object
     @Override // indicates that this method overrides a superclass method 
     public String toString() {
         return String.format("%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f",
-            "commission employee", firstName, lastName,
-            "social security number", socialSecurityNumber,
-            "gross sales", grossSales,
-            "commission rate", commissionRate);
+            "commission employee", getFirstName(), getLastName(),
+            "social security number", getSocialSecurityNumber(),
+            "gross sales", getGrossSales(),
+            "commission rate", getCommissionRate());
     }
 }

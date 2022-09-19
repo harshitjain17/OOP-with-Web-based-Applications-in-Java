@@ -18,6 +18,6 @@ public class CarLoan extends LoanAccountHierarchy {
 
     @Override
     public String toString() {
-        return "Car Loan with:" + super.toString() + "\nVehicle VIN: " + vehicleVIN;
+        return "Car Loan with:\n" + super.toString() + "\nVehicle VIN: " + vehicleVIN;
     }
 }

@@ -21,7 +21,7 @@ public class PrimaryMortgage extends LoanAccountHierarchy{
     // displays the information about the PMIMonthlyAmount and Address
     @Override
     public String toString() {
-        return "Primary Mortgage Loan with:" + super.toString() + 
+        return "\n\nPrimary Mortgage Loan with:\n" + super.toString() + 
              "\nPMI Monthly Amount: $" + String.format("%.2f", PMIMonthlyAmount) + 
              "\nProperty Address:" + address.toString() + "\n";
     }

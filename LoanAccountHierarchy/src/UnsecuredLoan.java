@@ -16,6 +16,6 @@ public class UnsecuredLoan extends LoanAccountHierarchy{
 
     @Override
     public String toString() {
-        return "Unsecured Loan with: " + super.toString() + "\n";
+        return "Unsecured Loan with:\n" + super.toString() + "\n";
     }
 }

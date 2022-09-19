@@ -35,7 +35,7 @@ public class LoanAccountHierarchy {
     }
     // calculates the monthly payment
     public double calculateMonthlyPayment() {
-        double monthlyInterest = getAnnualInterestRate()/12;
+        double monthlyInterest = (getAnnualInterestRate()/100)/12;
         double monthlyPayment = getPrinciple() * ( monthlyInterest / (1 - Math.pow(1 + monthlyInterest, -1 * getMonths())));
         return monthlyPayment;
     }
@@ -43,10 +43,10 @@ public class LoanAccountHierarchy {
     // return string implementation of LoanAccountHierarchy class
     @Override // indicates that this method overrides a superclass method 
     public String toString() {
-        return String.format("%s: $%.2f%n%s: %.2f %n%s%d%n%s%.2f",
-                "Principle: $", getPrinciple(),
-                "Annual Interest Rate", getAnnualInterestRate(),
-                "Term of Loan in Months", getMonths(),  
-                "Monthly Payment", calculateMonthlyPayment());
+        return String.format("%s: $%.2f%n%s: %.2f%s %n%s%d%n%s%.2f",
+                "Principle", getPrinciple(),
+                "Annual Interest Rate", getAnnualInterestRate(), "%",
+                "Term of Loan in Months: ", getMonths(),  
+                "Monthly Payment: $", calculateMonthlyPayment());
     }
 }

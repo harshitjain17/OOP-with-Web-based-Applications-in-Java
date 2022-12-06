@@ -55,8 +55,7 @@ public class StudentQueries {
         }
         catch(SQLException sqlException)
         {
-            sqlException.printStackTrace();
-            
+            sqlException.printStackTrace();   
         }
         return faculty;
     }
@@ -85,37 +84,37 @@ public class StudentQueries {
         
         
     }
-//    public static StudentEntry getStudent(String studentID)
-//    {
-//        connection = DBConnection.getConnection();
-//        try
-//        {
-//            getAllStudents = connection.prepareStatement("select studentid, firstname, lastname from app.student where studentid = ?");
-//            getAllStudents.setString(1, studentID);
-//            resultSet = getAllStudents.executeQuery();
-//            
-//            resultSet.next();
-//            return new StudentEntry(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3));
-//        }
-//        catch(SQLException sqlException)
-//        {
-//            sqlException.printStackTrace();
-//            return null;
-//        }
-//    }
+    public static StudentEntry getStudent(String studentID)
+    {
+        connection = DBConnection.getConnection();
+        try
+        {
+            getAllStudents = connection.prepareStatement("select studentid, firstname, lastname from app.student where studentid = ?");
+            getAllStudents.setString(1, studentID);
+            resultSet = getAllStudents.executeQuery();
+            
+            resultSet.next();
+            return new StudentEntry(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3));
+        }
+        catch(SQLException sqlException)
+        {
+            sqlException.printStackTrace();
+            return null;
+        }
+    }
 
-//    public static void dropStudent(String studentID)
-//    {
-//        connection = DBConnection.getConnection();
-//        try
-//        {
-//            getAllStudents = connection.prepareStatement("delete from app.student where studentid = ?");
-//            getAllStudents.setString(1, studentID);
-//            getAllStudents.executeUpdate();
-//        }
-//        catch(SQLException sqlException)
-//        {
-//            sqlException.printStackTrace();
-//        }
-//    }
+    public static void dropStudent(String studentID)
+    {
+        connection = DBConnection.getConnection();
+        try
+        {
+            getAllStudents = connection.prepareStatement("delete from app.student where studentid = ?");
+            getAllStudents.setString(1, studentID);
+            getAllStudents.executeUpdate();
+        }
+        catch(SQLException sqlException)
+        {
+            sqlException.printStackTrace();
+        }
+    }
 }

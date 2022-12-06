@@ -35,4 +35,8 @@ public class StudentEntry {
     {
         return this.lastName + ", " + this.firstName;
     }
+    public String completeID()
+    {
+        return lastFirstName() + " " + this.studentID;
+    }
 }

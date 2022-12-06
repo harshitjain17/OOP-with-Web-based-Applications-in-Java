@@ -102,19 +102,19 @@ public class CourseQueries {
         return count;
     }
 
-//    public static void dropCourse(String semester, String courseCode)
-//    {
-//        connection = DBConnection.getConnection();
-//        try
-//        {
-//            getCourseList = connection.prepareStatement("delete from app.course where semester = ? and coursecode = ?");
-//            getCourseList.setString(1, semester);
-//            getCourseList.setString(2, courseCode);
-//            getCourseList.executeUpdate();
-//        }
-//        catch(SQLException sqlException)
-//        {
-//            sqlException.printStackTrace();
-//        }
-//    }
+    public static void dropCourse(String semester, String courseCode)
+    {
+        connection = DBConnection.getConnection();
+        try
+        {
+            getCourseList = connection.prepareStatement("delete from app.course where semester = ? and coursecode = ?");
+            getCourseList.setString(1, semester);
+            getCourseList.setString(2, courseCode);
+            getCourseList.executeUpdate();
+        }
+        catch(SQLException sqlException)
+        {
+            sqlException.printStackTrace();
+        }
+    }
 }

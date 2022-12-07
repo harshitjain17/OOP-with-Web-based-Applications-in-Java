@@ -986,7 +986,7 @@ public class MainFrame extends javax.swing.JFrame {
         
         // deletion of the student and his schedule
         dropStudentTextArea.setText("");
-        StudentEntry student = StudentQueries.getStudent(studentNamesCB(dropStudentComboBox)[1]);
+        StudentEntry student = StudentQueries.getStudent(fetchingStudentID(dropStudentComboBox)[1]);
         dropStudentTextArea.append((String)dropStudentComboBox.getSelectedItem() + " has been dropped from the list of students.\n\n");
 
         for (String currentSemester : SemesterQueries.getSemesterList())
@@ -1017,7 +1017,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
         dropStudentTextArea.append((String)dropStudentComboBox.getSelectedItem() + " has been removed from all the student comboboxes.\n\n");
         
-        StudentQueries.dropStudent(studentNamesCB(dropStudentComboBox)[1]);
+        StudentQueries.dropStudent(fetchingStudentID(dropStudentComboBox)[1]);
         rebuildStudentComboBoxes();
     }//GEN-LAST:event_dropStudentButtonActionPerformed
     
@@ -1065,19 +1065,19 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void changeStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeStudentActionPerformed
         // TODO add your handling code here:
-        currentStudent = StudentQueries.getStudent(studentNamesCB(changeStudentComboBox)[1]);
+        currentStudent = StudentQueries.getStudent(fetchingStudentID(changeStudentComboBox)[1]);
         currentStudentLabel.setText((String)changeStudentComboBox.getSelectedItem());
         displayScheduleButtonActionPerformed(null);
         rebuildCurrentStudentCourseComboBox();
     }//GEN-LAST:event_changeStudentActionPerformed
     
-    private String[] studentNamesCB(javax.swing.JComboBox<String> input)
+    private String[] fetchingStudentID(javax.swing.JComboBox<String> input)
     {
-        String[] val = ((String)input.getSelectedItem()).split(" ");
-        String[] retVal = new String[2];
-        retVal[0] = val[0] + " " + val[1];
-        retVal[1] = val[2];
-        return retVal;
+        String[] comboBoxValueListForm = ((String)input.getSelectedItem()).split(" ");
+        String[] nameAndIDList = new String[2];
+        nameAndIDList[0] = comboBoxValueListForm[0] + " " + comboBoxValueListForm[1];
+        nameAndIDList[1] = comboBoxValueListForm[2];
+        return nameAndIDList;
     }
     
     /**
